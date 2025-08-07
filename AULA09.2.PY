@@ -9,13 +9,13 @@
 #- Inserir notas 
 #- Fazer a média
 
-dados_alunos = {}
+dados_alunos = {[Nomes], [Notas]}
 dados_professores = {}
 
 
-print('Cadastre-se professor')
-login = input('Nome: ')
-senha = input('Senha:')
+print('BEM VINDO - CADASTRE-SE')
+login = input('Cadastre um login: ')
+senha = input('Cadastre uma senha:')
 print('_________________________')
 dados_professores['logins'] = [login]
 dados_professores['senhas'] = [senha]
@@ -25,11 +25,31 @@ for n in range(3):
     senha_login = input('Senha de login: ')
     if login in dados_professores['logins'] and senha_login in dados_professores['senhas']:
         nome = input('digite o nome do aluno: ')
-        nome = input('digite as notas doaluno: ')
-
-
+        nota = float(input('digite a nota do aluno: '))
+        dados_alunos['Nomes'] + nome
+        dados_alunos['Notas'] + nota
+        condicional_notas = input('deseja inserir mais notas? ')
+        while condicional_notas == 'sim':
+            nota = float(input('digite a nota do aluno: '))
+            dados_alunos['Notas'] + nota
+            print(dados_alunos['Nomes'])
+            print(dados_alunos['Notas'])
+            condicional_notas = input('deseja inserir mais notas? ')
+        else: print ('a média do aluno', nome, 'é: ', sum([dados_alunos['Notas']])/len([dados_alunos['Notas']]))
+        encerrar = input('deseja encerrar?')
+        if encerrar == 'nao': 
+            condicional_notas = input('deseja inserir mais notas? ')
+            while condicional_notas == 'sim':
+                nota = float(input('digite a nota do aluno: '))
+                dados_alunos['Notas'] + nota
+                print(dados_alunos['Nomes'])
+                print(dados_alunos['Notas'])
+                condicional_notas = input('deseja inserir mais notas? ')
+            else: print ('a média do aluno', nome, 'é: ', sum([dados_alunos['Notas']])/len([dados_alunos['Notas']]))
+            print(dados_alunos['Notas'])
+        else:print ('até breve!')
+        break
     else:
         print('Você digitou algo errado, tente novamente')
 else:
     print('Conta bloqueada!')
-
